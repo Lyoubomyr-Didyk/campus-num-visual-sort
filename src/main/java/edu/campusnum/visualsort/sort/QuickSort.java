@@ -2,6 +2,8 @@ package edu.campusnum.visualsort.sort;
 
 import edu.campusnum.visualsort.model.ObservableArray;
 
+import java.util.Arrays;
+
 /**
  * Created by Web 74 all right reserved
  * User: vincent
@@ -11,6 +13,13 @@ import edu.campusnum.visualsort.model.ObservableArray;
 public class QuickSort implements SortAlgorithm{
     @Override
     public void sort(ObservableArray array) {
-        throw new UnsupportedOperationException("Not implemented");
+
+        int size = array.getLength();
+        quickSort();
+
+    }
+
+    public void quickSort(){
+        if(size < 2) return;
     }
 }
