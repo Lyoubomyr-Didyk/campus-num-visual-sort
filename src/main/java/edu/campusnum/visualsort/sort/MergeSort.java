@@ -33,7 +33,7 @@ public class MergeSort implements SortAlgorithm{
 
 
 
-                while(i < left.getLength() && j < right.getLength()){
+                /*while(i < left.getLength() && j < right.getLength()){
                     if(left.get(i) < right.get(j)){
                         array.get(idx) = left.get(i);
                         i++;
@@ -42,7 +42,7 @@ public class MergeSort implements SortAlgorithm{
                         j++;
                     }
                     idx++;
-                }
+                }*/
 
             }
 
