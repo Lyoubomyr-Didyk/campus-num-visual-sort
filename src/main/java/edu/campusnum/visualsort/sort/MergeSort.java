@@ -1,6 +1,7 @@
 package edu.campusnum.visualsort.sort;
 
 import edu.campusnum.visualsort.model.ObservableArray;
+import edu.campusnum.visualsort.model.Order;
 
 /**
  * Created by Web 74 all right reserved
@@ -15,37 +16,29 @@ public class MergeSort implements SortAlgorithm{
 
         int length = array.getLength();
 
+                // slice
+
             if(length > 1) {
+                int left = 0;
+                int right = length/2;
 
-                int mid = length/2;
+                ObservableArray array1 = array.slice(left, right);
+                ObservableArray array2 = array.slice(right, length - right);
 
-                ObservableArray left = array.slice(0, mid);
-                ObservableArray right = array.slice(mid, length);
+                this.sort(array1);
+                this.sort(array2);
 
-                this.sort(left);
-                this.sort(right);
+                //merge
 
-
-
-                int i = 0;
-                int j = 0;
-                int idx = 0;   // zberigaemo menshui index iz left i right
-
-
-
-                /*while(i < left.getLength() && j < right.getLength()){
-                    if(left.get(i) < right.get(j)){
-                        array.get(idx) = left.get(i);
-                        i++;
-                    }else {
-                        array.get(idx) = right.get(j);
-                        j++;
+                while (right - left > 0 && length - right > 0){
+                    if (array.compare(right, left).equals(Order.Lower) ){
+                        for (int j = right; j > left; j--){
+                            array.swap(j, j-1);
+                        }
+                        right = right+1;
                     }
-                    idx++;
-                }*/
-
+                    left++;
+                }
             }
-
     }
-
 }

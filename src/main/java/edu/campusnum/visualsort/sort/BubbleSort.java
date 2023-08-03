@@ -23,7 +23,6 @@ public class BubbleSort implements SortAlgorithm{
                     array.swap(i, i +1);
                     hasSwap = false;
                 }
-
             }
         }
     }

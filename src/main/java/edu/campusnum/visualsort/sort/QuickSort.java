@@ -11,15 +11,14 @@ import edu.campusnum.visualsort.model.ObservableArray;
 public class QuickSort implements SortAlgorithm{
     @Override
     public void sort(ObservableArray array) {
-        int firstIndex = array.get(0);
-        int lastIndex = array.get(array.getLength() -1);
+        int firstIndex = 0;
+        int lastIndex = array.getLength() -1;
         quickSort(array, firstIndex, lastIndex);
 
     }
 
     public void quickSort(ObservableArray array, int first, int last){
-        int size = array.getLength();
-        if(size > 2){
+        if(first < last){
             int pi = partition(array, first, last);
             quickSort(array, first, pi -1);
             quickSort(array, pi+1, last);
